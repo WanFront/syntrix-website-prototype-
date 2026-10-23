@@ -1,0 +1,173 @@
+.ServicesSection {
+  padding: 4.5rem 0;
+  background-color: #fff;
+  border-top: 1px solid rgba(226, 232, 240, 0.8);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.ServicesIntro {
+  max-width: 42rem;
+  margin-bottom: 2.5rem;
+}
+
+.ServicesEyebrow {
+  display: block;
+  color: var(--color-brand-orange);
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+.ServicesTitle {
+  font-size: 1.875rem;
+  font-weight: 800;
+  color: var(--color-brand-dark);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0;
+}
+
+@media (min-width: 640px) {
+  .ServicesTitle { font-size: 2.25rem; }
+}
+
+.ServicesTitleMuted {
+  color: #64748b;
+  font-weight: 400;
+}
+
+.ServicesList {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .ServicesList { grid-template-columns: repeat(2, 1fr); }
+}
+
+.ServiceCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  background-color: var(--color-brand-bg-off);
+  padding: 1.25rem;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  transition: border-color 0.3s ease;
+}
+
+.ServiceCard:hover {
+  border-color: var(--color-brand-orange);
+}
+
+.ServiceCard:hover .ServiceImage {
+  transform: scale(1.05);
+}
+
+.ServiceCard:hover .ServiceTitle {
+  color: var(--color-brand-orange);
+}
+
+.ServiceImageWrap {
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-card-hover);
+  background-color: #0f172a;
+  height: 11rem;
+  position: relative;
+  order: -1;
+}
+
+.ServiceImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+  transition: transform 0.7s ease;
+}
+
+.ServiceImageGradient {
+  position: absolute;
+  inset: 0;
+}
+
+.ServiceImageGradientTr {
+  background: linear-gradient(to top right, rgba(15, 23, 42, 0.8), transparent, transparent);
+}
+
+.ServiceImageGradientTl {
+  background: linear-gradient(to top left, rgba(15, 23, 42, 0.8), transparent, transparent);
+}
+
+.ServiceTag {
+  position: absolute;
+  top: 1rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.ServiceTagLeft { left: 1rem; }
+.ServiceTagRight { right: 1rem; }
+
+.ServiceText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  padding: 0 0.25rem 0.25rem;
+}
+
+.ServiceIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.75rem;
+  background-color: #ffedd5;
+  color: var(--color-brand-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ServiceTitle {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-brand-dark);
+  transition: color 0.2s ease;
+  margin: 0;
+}
+
+.ServiceDescription {
+  font-size: 0.875rem;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.ServiceFeatures {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  padding-top: 0.25rem;
+}
+
+.ServiceFeatures li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ServiceCheckIcon {
+  color: var(--color-brand-orange);
+  flex-shrink: 0;
+}
+

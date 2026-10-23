@@ -1,0 +1,109 @@
+.AboutHero {
+  background-color: #FAFAFC;
+  padding-top: calc(2.5rem + var(--header-space));
+  padding-bottom: 6rem;
+}
+
+@media (min-width: 1024px) {
+  .AboutHero {
+    padding-top: calc(4rem + var(--header-space));
+    padding-bottom: 6rem;
+  }
+}
+
+.AboutHeroGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .AboutHeroGrid {
+    grid-template-columns: 1.1fr 1fr;
+    gap: 4rem;
+  }
+}
+
+.AboutHeroLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.AboutHeadline {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--color-brand-dark);
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  margin: 0;
+}
+
+@media (min-width: 640px) {
+  .AboutHeadline { font-size: 3rem; }
+}
+
+@media (min-width: 1024px) {
+  .AboutHeadline { font-size: 3.625rem; }
+}
+
+.AboutHeadlineAccent {
+  color: var(--color-brand-orange);
+}
+
+.AboutSubtext {
+  font-size: 1rem;
+  color: #475569;
+  max-width: 36rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (min-width: 640px) {
+  .AboutSubtext { font-size: 1.125rem; }
+}
+
+.AboutSideCards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  max-width: 32rem;
+}
+
+.AboutSideCard {
+  position: relative;
+  aspect-ratio: 25 / 23;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease;
+}
+
+.AboutSideCard:hover {
+  transform: translateY(-4px);
+}
+
+.AboutSideCard span {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  padding: 0.5rem 0.875rem;
+  background-color: #0E0E0E;
+  color: #fff;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.AboutMainImage {
+  width: 100%;
+  aspect-ratio: 507 / 400;
+  border-radius: 1.5rem;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+

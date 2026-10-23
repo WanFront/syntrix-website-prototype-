@@ -1,0 +1,71 @@
+.CoreGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .CoreGrid {
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: start;
+  }
+}
+
+.CoreIntro {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.CoreIntro .SectionEyebrow { margin-bottom: -0.5rem; }
+
+.CoreCards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .CoreCards { grid-template-columns: repeat(3, 1fr); }
+}
+
+.CoreCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.CoreImage {
+  aspect-ratio: 1 / 1;
+  border-radius: 1.5rem;
+  margin-bottom: 0.5rem;
+  background-size: cover;
+  background-position: top;
+  transition: transform 0.3s ease;
+}
+
+.CoreCard:hover .CoreImage {
+  transform: translateY(-4px);
+}
+
+.CoreCardTitle {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-brand-dark);
+  margin: 0;
+  transition: color 0.2s ease;
+}
+
+.CoreCard:hover .CoreCardTitle {
+  color: var(--color-brand-orange);
+}
+
+.CoreCardText {
+  font-size: 0.875rem;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+}
+

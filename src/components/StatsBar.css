@@ -1,0 +1,54 @@
+.StatsBar {
+  background-color: var(--color-brand-dark);
+  color: #fff;
+  padding: 3.5rem 0;
+  border-top: 1px solid #1e293b;
+  border-bottom: 1px solid #1e293b;
+}
+
+.StatsBarGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .StatsBarGrid {
+    grid-template-columns: repeat(4, 1fr);
+    text-align: left;
+  }
+}
+
+.StatBlock {
+  padding-top: 1rem;
+}
+
+@media (min-width: 640px) {
+  .StatBlock {
+    padding-top: 0;
+    padding-left: 1.5rem;
+    border-left: 1px solid #1e293b;
+  }
+  .StatBlock:first-child { border-left: none; padding-left: 0; }
+}
+
+.StatValue {
+  font-size: 1.875rem;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+@media (min-width: 640px) {
+  .StatValue { font-size: 2.25rem; }
+}
+
+.StatLabel {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-weight: 500;
+  margin: 0.25rem 0 0;
+}

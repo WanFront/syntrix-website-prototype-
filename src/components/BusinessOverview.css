@@ -1,0 +1,59 @@
+.OverviewSection {
+  background-color: #fff;
+  border-top: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.OverviewGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .OverviewGrid {
+    grid-template-columns: 1.1fr 1fr;
+    gap: 4rem;
+  }
+}
+
+.OverviewIntro {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.OverviewList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.OverviewItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  color: #334155;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.5;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.OverviewItem:hover {
+  border-color: var(--color-brand-orange);
+  transform: translateX(4px);
+}
+
+.OverviewIcon {
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: var(--color-brand-orange);
+}

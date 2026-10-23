@@ -1,0 +1,266 @@
+/* =========================================================
+   Dark mode
+   Every rule is scoped to html[data-theme="dark"], so light mode is untouched.
+   ========================================================= */
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* GitHub dark palette (Primer "dark default") */
+  --d-bg: #0d1117;          /* page and sections (canvas) */
+  --d-section: #0d1117;
+  --d-surface: #161b22;     /* cards (canvas subtle) */
+  --d-surface-2: #21262d;   /* hover, buttons */
+  --d-border: #21262d;      /* card border (muted, subtle) */
+  --d-border-strong: #30363d; /* inputs, buttons, chips */
+  --d-text: #e6edf3;        /* headings (fg default) */
+  --d-body: #c9d1d9;        /* paragraphs */
+  --d-muted: #8b949e;       /* labels, captions (fg muted) */
+  --d-band: #161b22;        /* stats bar, mission band */
+
+  /* variables used by the projects section */
+  --text-primary: var(--d-text);
+  --text-secondary: var(--d-body);
+  --text-light: var(--d-muted);
+  --bg-white: var(--d-section);
+  --bg-light: var(--d-surface);
+}
+
+/* --- theme switch: no default crossfade, the circle reveal is drawn in theme.js --- */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* fallback fade for browsers without View Transitions */
+html.theme-fading,
+html.theme-fading *,
+html.theme-fading *::before,
+html.theme-fading *::after {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, fill 0.4s ease !important;
+}
+
+/* ---------- base ---------- */
+html[data-theme="dark"] body { background-color: var(--d-bg); color: var(--d-text); }
+html[data-theme="dark"] .SectionTitle { color: var(--d-text); }
+html[data-theme="dark"] .SectionBody { color: var(--d-body); }
+
+/* ---------- header ---------- */
+html[data-theme="dark"] .header {
+  background-color: var(--d-surface);
+  border-color: var(--d-border);
+  box-shadow: none;
+}
+html[data-theme="dark"] .logo-name { color: var(--d-text); }
+html[data-theme="dark"] .navbar a { color: var(--d-muted); }
+html[data-theme="dark"] .navbar a:hover { color: var(--d-text); background-color: rgba(255, 255, 255, 0.06); }
+html[data-theme="dark"] .navbar a.active { color: var(--color-brand-orange); background-color: rgba(255, 91, 38, 0.16); }
+html[data-theme="dark"] .navbar .navbar-contact { color: #fff; }
+html[data-theme="dark"] .menu-toggle { background-color: rgba(255, 255, 255, 0.08); }
+html[data-theme="dark"] .menu-toggle span { background-color: var(--d-text); }
+html[data-theme="dark"] .theme-toggle { color: var(--d-muted); background-color: transparent; }
+html[data-theme="dark"] .theme-toggle:hover { color: var(--color-brand-orange); background-color: transparent; }
+@media (max-width: 640px) {
+  html[data-theme="dark"] .navbar { background-color: var(--d-section); border-color: var(--d-border); }
+}
+
+/* ---------- home: hero ---------- */
+html[data-theme="dark"] .HeroSection { background-color: var(--d-bg); }
+html[data-theme="dark"] .HeroBadge { background-color: var(--d-surface); border-color: var(--d-border-strong); }
+html[data-theme="dark"] .HeroHeadline { color: var(--d-text); }
+html[data-theme="dark"] .HeroSubtext { color: var(--d-body); }
+html[data-theme="dark"] .HeroBtnSecondary { background-color: var(--d-surface); color: var(--d-text); border-color: var(--d-border-strong); }
+html[data-theme="dark"] .HeroBtnSecondary:hover { background-color: var(--d-surface-2); border-color: #8b949e; }
+html[data-theme="dark"] .HeroFloatingBadge { background-color: var(--d-surface); border-color: var(--d-border-strong); box-shadow: 0 20px 25px rgba(0, 0, 0, 0.4); }
+html[data-theme="dark"] .HeroFloatingBadgeText { color: var(--d-text); }
+html[data-theme="dark"] .HeroImageFrame { box-shadow: 0 25px 50px rgba(0, 0, 0, 0.55); }
+
+/* ---------- home: overview ---------- */
+html[data-theme="dark"] .OverviewSection { background-color: var(--d-section); border-top-color: var(--d-border); }
+html[data-theme="dark"] .OverviewItem { background-color: var(--d-surface); border-color: var(--d-border); color: var(--d-body); }
+
+/* ---------- services ---------- */
+html[data-theme="dark"] .ServicesSection { background-color: var(--d-section); border-color: var(--d-border); }
+html[data-theme="dark"] .ServicesTitle { color: var(--d-text); }
+html[data-theme="dark"] .ServicesTitleMuted { color: var(--d-muted); }
+html[data-theme="dark"] .ServiceCard { background-color: var(--d-surface); border-color: var(--d-border); }
+html[data-theme="dark"] .ServiceIcon { background-color: rgba(255, 91, 38, 0.15); }
+html[data-theme="dark"] .ServiceTitle { color: var(--d-text); }
+html[data-theme="dark"] .ServiceDescription { color: var(--d-body); }
+html[data-theme="dark"] .ServiceFeatures { color: var(--d-muted); }
+
+/* ---------- dark bands: a step darker than sections so they still stand out ---------- */
+html[data-theme="dark"] .StatsBar { background-color: var(--d-band); border-color: var(--d-border); }
+html[data-theme="dark"] .AboutMV { background-color: var(--d-band); border-top: 1px solid var(--d-border); border-bottom: 1px solid var(--d-border); }
+html[data-theme="dark"] .MVItemTitle { color: var(--d-text); }
+
+/* ---------- home: recent projects ---------- */
+html[data-theme="dark"] .ProjectsSection { background-color: var(--d-bg); }
+html[data-theme="dark"] .ProjectsTitle { color: var(--d-text); }
+html[data-theme="dark"] .ProjectsSubtext { color: var(--d-muted); }
+html[data-theme="dark"] .ProjectCard { background-color: var(--d-surface); border-color: var(--d-border); }
+
+/* ---------- home: tools ---------- */
+html[data-theme="dark"] .TechSection { background-color: var(--d-section); border-bottom-color: var(--d-border); }
+html[data-theme="dark"] .TechTitle { color: var(--d-text); }
+html[data-theme="dark"] .TechViewAllBtn { background-color: var(--d-surface); color: var(--d-body); border-color: var(--d-border-strong); }
+html[data-theme="dark"] .TechViewAllBtn:hover { color: var(--color-brand-orange); border-color: var(--color-brand-orange); }
+html[data-theme="dark"] .TechMarqueeFadeLeft { background: linear-gradient(to right, var(--d-section), transparent); }
+html[data-theme="dark"] .TechMarqueeFadeRight { background: linear-gradient(to left, var(--d-section), transparent); }
+html[data-theme="dark"] .ToolPill { background-color: var(--d-surface); border-color: var(--d-border); }
+/* a faint ring keeps dark logo tiles (GitHub, JavaScript, Photoshop) visible on dark cards */
+html[data-theme="dark"] .ToolPillIcon,
+html[data-theme="dark"] .ToolsModalItemIcon { box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08); }
+html[data-theme="dark"] .ToolsModalCard { background-color: var(--d-section); border-color: var(--d-border); }
+html[data-theme="dark"] .ToolsModalHeader,
+html[data-theme="dark"] .ToolsModalFooter { background-color: var(--d-surface); border-color: var(--d-border); }
+html[data-theme="dark"] .ToolsModalTitle { color: var(--d-text); }
+html[data-theme="dark"] .ToolsModalSubtitle,
+html[data-theme="dark"] .ToolsModalFooterText,
+html[data-theme="dark"] .ToolsModalCloseIcon { color: var(--d-muted); }
+html[data-theme="dark"] .ToolsModalCloseIcon:hover { background-color: var(--d-surface-2); color: var(--d-text); }
+html[data-theme="dark"] .ToolsModalCategoryDivided { border-bottom-color: var(--d-border); }
+html[data-theme="dark"] .ToolsModalItem { background-color: var(--d-surface); border-color: var(--d-border); }
+html[data-theme="dark"] .ToolsModalItemFocused { border-color: var(--color-brand-orange); }
+html[data-theme="dark"] .ToolsModalItemName { color: var(--d-text); }
+html[data-theme="dark"] .ToolsModalCloseBtn { background-color: var(--d-surface-2); }
+
+/* ---------- contact form ---------- */
+html[data-theme="dark"] .CallbackCard { background-color: var(--d-surface); border-color: var(--d-border); }
+html[data-theme="dark"] .CallbackBadge { background-color: rgba(255, 91, 38, 0.15); }
+html[data-theme="dark"] .CallbackTitle { color: var(--d-text); }
+html[data-theme="dark"] .CallbackSubtext { color: var(--d-body); }
+html[data-theme="dark"] .CallbackHighlight { color: var(--d-body); }
+html[data-theme="dark"] .CallbackHighlightIcon { background-color: rgba(16, 185, 129, 0.15); color: #34d399; }
+html[data-theme="dark"] .CallbackRight { background-color: var(--d-section); border-color: var(--d-border); }
+html[data-theme="dark"] .CallbackLabel { color: var(--d-body); }
+html[data-theme="dark"] .CallbackInput,
+html[data-theme="dark"] .CallbackTextarea,
+html[data-theme="dark"] .CallbackSelect { background-color: var(--d-bg); border-color: var(--d-border-strong); color: var(--d-text); }
+html[data-theme="dark"] .CallbackInput::placeholder,
+html[data-theme="dark"] .CallbackTextarea::placeholder { color: #6e7681; }
+html[data-theme="dark"] .CallbackSelectChevron { color: var(--d-muted); }
+html[data-theme="dark"] .CallbackSuccess { background-color: rgba(16, 185, 129, 0.1); border-color: rgba(52, 211, 153, 0.3); color: #6ee7b7; }
+html[data-theme="dark"] .CallbackSuccessText { color: #a7f3d0; }
+html[data-theme="dark"] .CallbackDirect { border-top-color: var(--d-border); }
+html[data-theme="dark"] .CallbackDirectLabel,
+html[data-theme="dark"] .CallbackOptional,
+html[data-theme="dark"] .CallbackNote { color: var(--d-muted); }
+html[data-theme="dark"] .CallbackDirectLink { color: var(--d-text); }
+html[data-theme="dark"] .CallbackDirectLink:hover { color: var(--color-brand-orange); }
+html[data-theme="dark"] .CallbackError { background-color: rgba(248, 81, 73, 0.1); border-color: rgba(248, 81, 73, 0.4); color: #ff7b72; }
+html[data-theme="dark"] .CallbackErrorText { color: #ffa198; }
+html[data-theme="dark"] .ProjectPage .Callback { background-color: var(--d-bg); }
+
+/* ---------- about ---------- */
+html[data-theme="dark"] .AboutHero { background-color: var(--d-bg); }
+html[data-theme="dark"] .AboutHeadline { color: var(--d-text); }
+html[data-theme="dark"] .AboutSubtext { color: var(--d-body); }
+html[data-theme="dark"] .AboutStory { background-color: var(--d-section); border-color: var(--d-border); }
+html[data-theme="dark"] .StoryCard,
+html[data-theme="dark"] .StoryStats { background-color: var(--d-surface); border-color: var(--d-border); }
+html[data-theme="dark"] .StoryStat + .StoryStat { border-left-color: var(--d-border); }
+html[data-theme="dark"] .StoryCardTitle,
+html[data-theme="dark"] .StoryStatValue { color: var(--d-text); }
+html[data-theme="dark"] .StoryStatLabel { color: var(--d-muted); }
+html[data-theme="dark"] .CoreCardTitle { color: var(--d-text); }
+html[data-theme="dark"] .CoreCardText { color: var(--d-body); }
+html[data-theme="dark"] .TeamRole { color: var(--d-muted); }
+html[data-theme="dark"] .TeamIconLink,
+html[data-theme="dark"] .TeamIconGit { filter: invert(1) brightness(1.6); }
+
+/* ---------- projects: hero ---------- */
+html[data-theme="dark"] .ProjectHero { background-color: var(--d-bg); }
+html[data-theme="dark"] .ProjectHeroEyebrow { background-color: var(--d-surface); border-color: var(--d-border-strong); }
+html[data-theme="dark"] .ProjectHeroTitle { color: var(--d-text); }
+html[data-theme="dark"] .ProjectHeroSubtitle { color: var(--d-body); }
+html[data-theme="dark"] .ProjectHeroImageLink { background-color: var(--d-surface); box-shadow: 0 25px 50px rgba(0, 0, 0, 0.55); }
+html[data-theme="dark"] .ProjectHeroLaunchCallout { background: var(--d-surface); }
+
+/* ---------- projects: grid + filters ---------- */
+html[data-theme="dark"] .project-section { background-color: var(--d-section); }
+html[data-theme="dark"] .project-title { color: var(--d-text); }
+html[data-theme="dark"] .project-subtitle { color: var(--d-body); }
+html[data-theme="dark"] .project-category-button { background: var(--d-surface); border-color: var(--d-border-strong); color: var(--d-body); }
+html[data-theme="dark"] .project-category-button:hover { border-color: #8b949e; }
+html[data-theme="dark"] .project-category-button.active { background: var(--d-text); border-color: var(--d-text); color: var(--d-section); }
+html[data-theme="dark"] .project-search { background: var(--d-surface); border-color: var(--d-border-strong); color: var(--d-text); }
+html[data-theme="dark"] .project-search::placeholder { color: #6e7681; }
+html[data-theme="dark"] .project-badge { background: var(--d-surface); }
+html[data-theme="dark"] .project-info { background: var(--d-surface); color: var(--d-text); }
+html[data-theme="dark"] .project-name { color: var(--d-text); }
+html[data-theme="dark"] .project-category { color: var(--d-muted); }
+
+/* ---------- projects: popup ---------- */
+html[data-theme="dark"] .modal-overlay { background: rgba(0, 0, 0, 0.6); }
+html[data-theme="dark"] .modal-content { background: var(--d-section); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6); }
+html[data-theme="dark"] .modal-close { background: var(--d-surface); color: var(--d-text); }
+html[data-theme="dark"] .modal-close:hover { background: var(--d-surface-2); }
+html[data-theme="dark"] .modal-image-section { background: var(--d-surface); }
+html[data-theme="dark"] .modal-image { background-color: var(--d-surface-2); }
+html[data-theme="dark"] .modal-category { background-color: rgba(255, 91, 38, 0.15); }
+html[data-theme="dark"] .modal-title { color: var(--d-text); }
+html[data-theme="dark"] .modal-meta-item { background-color: var(--d-surface); border-color: var(--d-border); }
+html[data-theme="dark"] .modal-meta-icon { background-color: rgba(255, 91, 38, 0.15); }
+html[data-theme="dark"] .modal-meta-icon-progress { background-color: rgba(37, 99, 235, 0.18); color: #60a5fa; }
+html[data-theme="dark"] .modal-meta-label,
+html[data-theme="dark"] .modal-tech-label { color: var(--d-muted); }
+html[data-theme="dark"] .modal-meta-value { color: var(--d-text); }
+html[data-theme="dark"] .modal-tech { border-top-color: var(--d-border); }
+html[data-theme="dark"] .modal-tech-chip { background-color: var(--d-surface); border-color: var(--d-border-strong); color: var(--d-body); }
+html[data-theme="dark"] .btn-secondary { background: var(--d-surface); color: var(--d-text); border-color: var(--d-border-strong); }
+html[data-theme="dark"] .btn-secondary:hover { background: var(--d-surface-2); border-color: #8b949e; }
+
+/* ---------- projects: testimonials ---------- */
+html[data-theme="dark"] .TestimonialsSection { background-color: var(--d-bg); border-top-color: var(--d-border); }
+html[data-theme="dark"] .TestimonialsHeader h2 { color: var(--d-text); }
+html[data-theme="dark"] .TestimonialCard { background: var(--d-surface); border-color: var(--d-border); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3); }
+html[data-theme="dark"] .TestimonialQuote { color: var(--d-body); }
+html[data-theme="dark"] .TestimonialClientName { color: var(--d-text); }
+html[data-theme="dark"] .TestimonialClientTitle { color: var(--d-muted); }
+
+/* ---------- keep it flat: no colored glows in dark mode ---------- */
+html[data-theme="dark"] .HeroRightBacklight { display: none; }
+html[data-theme="dark"] .HeroBtnPrimary,
+html[data-theme="dark"] .ProjectsMoreBtn,
+html[data-theme="dark"] .ProjectHeroBtn,
+html[data-theme="dark"] .CallbackSubmitBtn,
+html[data-theme="dark"] .btn-primary,
+html[data-theme="dark"] .contact-link,
+html[data-theme="dark"] .HeroSignalBar,
+html[data-theme="dark"] .ProjectHeroLaunchDot { box-shadow: none; }
+html[data-theme="dark"] .HeroStatsCard,
+html[data-theme="dark"] .HeroStatsCard:hover { background-color: var(--d-surface); border-color: var(--d-border-strong); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4); }
+html[data-theme="dark"] .HeroStatValue { color: var(--d-text); }
+html[data-theme="dark"] .HeroStatValueAccent { color: var(--color-brand-orange); }
+html[data-theme="dark"] .HeroStatLabel { color: var(--d-muted); }
+html[data-theme="dark"] .HeroStatBlock { border-left-color: var(--d-border-strong); }
+html[data-theme="dark"] .HeroStatBlock:first-child { border-left: none; }
+html[data-theme="dark"] .HeroFloatingBadge { box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35); }
+
+/* ---------- simple: one page color, cards slightly lighter, no section dividers ---------- */
+html[data-theme="dark"] .AboutMV { background-color: var(--d-bg); }
+html[data-theme="dark"] .OverviewSection,
+html[data-theme="dark"] .ServicesSection,
+html[data-theme="dark"] .StatsBar,
+html[data-theme="dark"] .TechSection,
+html[data-theme="dark"] .AboutStory,
+html[data-theme="dark"] .AboutMV,
+html[data-theme="dark"] .TestimonialsSection { border-color: transparent; }
+html[data-theme="dark"] .HeroSection,
+html[data-theme="dark"] .AboutHero,
+html[data-theme="dark"] .ProjectHero { border-bottom: 1px solid transparent; }
+
+
+/* ---------- about: how we work ---------- */
+html[data-theme="dark"] .HowWeWork { background-color: var(--d-bg); border-top-color: transparent; }
+html[data-theme="dark"] .HowStep { background-color: var(--d-surface); border-color: var(--d-border); }
+html[data-theme="dark"] .HowStep:hover { border-color: var(--color-brand-orange); }
+html[data-theme="dark"] .HowStepTitle { color: var(--d-text); }
+html[data-theme="dark"] .HowStepText { color: var(--d-body); }
+html[data-theme="dark"] .HowStepDeliverable { border-top-color: var(--d-border-strong); color: var(--d-text); }
+html[data-theme="dark"] .HowStepDeliverableLabel { color: var(--d-muted); }
+html[data-theme="dark"] .CallbackMaintenanceIcon { background-color: rgba(255, 91, 38, 0.15); color: var(--color-brand-orange); }
+html[data-theme="dark"] .CallbackMaintenanceTitle { color: var(--d-text); }
+html[data-theme="dark"] .CallbackMaintenanceText { color: var(--d-body); }

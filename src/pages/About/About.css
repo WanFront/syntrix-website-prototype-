@@ -1,0 +1,9 @@
+.AboutUsPage {
+  display: flex;
+  flex-direction: column;
+}
+
+.AboutUsPage .Callback {
+  padding-top: 4.5rem;
+  padding-bottom: 6rem;
+}

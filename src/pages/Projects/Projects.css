@@ -1,0 +1,11 @@
+.ProjectPage {
+  display: flex;
+  flex-direction: column;
+}
+
+.ProjectPage .Callback {
+  padding-top: 3rem;
+  padding-bottom: 6rem;
+  background-color: #FAFBFC;
+}
+

@@ -1,0 +1,50 @@
+/* =========================================================
+   Section backgrounds (light mode)
+   Every section uses the hero's white, except the callback (light gray).
+   No divider lines between sections.
+   Dark mode sets its own colors in dark.css.
+   ========================================================= */
+
+:root {
+  --section-white: #ffffff;
+  --section-gray: #f4f6f8;
+}
+
+/* --- no thin lines between sections --- */
+.OverviewSection,
+.ServicesSection,
+.StatsBar,
+.TechSection,
+.AboutStory,
+.HowWeWork,
+.AboutMV,
+.TestimonialsSection {
+  border-top: none;
+  border-bottom: none;
+}
+
+html:not([data-theme="dark"]) body { background-color: var(--section-white); }
+
+/* --- Home: hero / overview / services / stats (dark) / recent / tools / callback --- */
+html:not([data-theme="dark"]) .HeroSection { background-color: var(--section-white); }
+html:not([data-theme="dark"]) .OverviewSection { background-color: var(--section-white); }
+html:not([data-theme="dark"]) .ServicesSection { background-color: var(--section-white); }
+html:not([data-theme="dark"]) .ProjectsSection { background-color: var(--section-white); }
+html:not([data-theme="dark"]) .TechSection { background-color: var(--section-white); }
+
+/* --- About: hero / story / values / how we work / mission / team + callback --- */
+html:not([data-theme="dark"]) .AboutHero { background-color: var(--section-white); }
+html:not([data-theme="dark"]) .AboutStory { background-color: var(--section-white); }
+html:not([data-theme="dark"]) .AboutCore { background-color: var(--section-white); }
+html:not([data-theme="dark"]) .HowWeWork { background-color: var(--section-white); }
+html:not([data-theme="dark"]) .AboutMV { background-color: var(--section-white); }
+html:not([data-theme="dark"]) .AboutTeam { background-color: var(--section-white); }
+
+/* --- Projects: hero / all projects / testimonials / callback --- */
+html:not([data-theme="dark"]) .ProjectHero { background-color: var(--section-white); }
+html:not([data-theme="dark"]) .project-section { background-color: var(--section-white); }
+html:not([data-theme="dark"]) .TestimonialsSection { background-color: var(--section-white); }
+
+/* --- callback is always the last section before the footer: gray on every page --- */
+html:not([data-theme="dark"]) .Callback,
+html:not([data-theme="dark"]) .ProjectPage .Callback { background-color: var(--section-gray); }
